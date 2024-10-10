@@ -1,10 +1,11 @@
 import 'dart:convert';
-import "dart:io";
-import "package:path_provider/path_provider.dart";
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import 'package:demo_project/widgets/article_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import "package:demo_project/models/article.dart";
+import 'package:demo_project/models/article.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -14,41 +15,48 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  void initState(){
-    
+  void initState() {
     super.initState();
-        loaddata();
+    loadData();
   }
-  loaddata() async {
 
-    final directory= await getApplicationDocumentsDirectory();
+  Future<void> loadData() async {
+    final directory = await getApplicationDocumentsDirectory();
     final filepath = "${directory.path}/animedata.json";
-    var articlesjson = await File(filepath).readAsString() ;
-    var decodeddata= jsonDecode(articlesjson);
-    List<Article> list = List.from(decodeddata).map<Article>((article) => Article.fromMap(article)).toList();
+
+    // Check if the file exists
+    if (!await File(filepath).exists()) {
+      final String assetPath = 'assets/files/animedata.json';
+      final String articlesJson = await rootBundle.loadString(assetPath);
+
+
+      await File(filepath).writeAsString(articlesJson);
+      print('File created at: $filepath');
+    }
+
+    var articlesJson = await File(filepath).readAsString();
+    var decodedData = jsonDecode(articlesJson);
+    List<Article> list = List.from(decodedData).map<Article>((article) => Article.fromMap(article)).toList();
     ArticleModel.articles = list;
-
-    setState(() {
-
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    loaddata();
-    return Container(
-      child: (ArticleModel.articles.length!=0 && ArticleModel.articles.isNotEmpty) ?  ListView.builder(
+    return Scaffold(
+      appBar: AppBar(title: Text('Popular Toons')),
+      body: (ArticleModel.articles.isNotEmpty)
+          ? ListView.builder(
         itemCount: ArticleModel.articles.length,
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return ArticleWidget(
             articleIndex: index,
-            article : ArticleModel.articles[index]
+            article: ArticleModel.articles[index],
           );
         },
-      ) :
-          Center(
-            child: CircularProgressIndicator(),
-          )
+      )
+          : Center(
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 }

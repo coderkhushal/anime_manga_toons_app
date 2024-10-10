@@ -2,8 +2,10 @@ import 'package:demo_project/screens/detail_screen.dart';
 import 'package:demo_project/screens/favourite_screen.dart';
 import 'package:demo_project/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import "package:path_provider/path_provider.dart";
+import "dart:io";
 void main() {
   runApp(const MyApp());
 }
@@ -39,6 +41,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final pageController = PageController(initialPage: 0);
   late int _selectedIndex = 0;
+  void initState() {
+
+  checkandwritefile();
+  }
+  void checkandwritefile()async{
+
+    final directory= await getApplicationDocumentsDirectory();
+    final filepath = "${directory}/animedata.json";
+    var content = await rootBundle.loadString("assets/files/animedata.json");
+    var file = File(filepath).writeAsString(content);
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(

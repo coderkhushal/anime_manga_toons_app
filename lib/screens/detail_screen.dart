@@ -24,23 +24,28 @@ class _DetailScreenState extends State<DetailScreen> {
     isFavourite = widget.article.favourite;
 
   }
-  toggleFavorite() async {
+   toggleFavorite() async {
+     final directory = await getApplicationDocumentsDirectory();
+     final filepath = "${directory.path}/animedata.json";
 
-    final directory= await getApplicationDocumentsDirectory();
-    final filepath = "${directory.path}/animedata.json";
-    var articlesjson = await File(filepath).readAsString();
-    var decodeddata= jsonDecode(articlesjson);
-    List<Article> list = List.from(decodeddata).map<Article>((article) => Article.fromMap(article)).toList();
-    list[widget.articleIndex].favourite = !(list[widget.articleIndex].favourite);
-    await File(filepath).writeAsString(jsonEncode(list.map((e) => e.toMap()).toList()));
+     if (await File(filepath).exists()) {
+       setState(() {
+         isFavourite = !isFavourite; // Optimistically update the UI
+       });
 
-    setState(() {
+       var articlesJson = await File(filepath).readAsString();
+       var decodedData = jsonDecode(articlesJson);
+       var articleList = List.from(decodedData).map<Article>((article) => Article.fromMap(article)).toList();
 
-      isFavourite = (list[widget.articleIndex].favourite);
-      print(isFavourite);
-    });
-  }
-  @override
+       articleList[widget.articleIndex].favourite = isFavourite;
+
+       await File(filepath).writeAsString(jsonEncode(articleList.map((e) => e.toMap()).toList()));
+     } else {
+       print('Error: File not found at $filepath');
+     }
+   }
+
+   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(

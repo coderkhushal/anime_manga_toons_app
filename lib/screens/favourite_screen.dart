@@ -17,6 +17,7 @@ class FavouriteScreen extends StatefulWidget {
 }
 
 class _FavouriteScreenState extends State<FavouriteScreen> {
+  List<Article> favourite= [];
   @override
   void initState(){
 
@@ -27,11 +28,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
     final directory= await getApplicationDocumentsDirectory();
     final filepath = "${directory.path}/animedata.json";
+
     var articlesjson = await File(filepath).readAsString() ;
     var decodeddata= jsonDecode(articlesjson);
     List<Article> list = List.from(decodeddata).map<Article>((article) => Article.fromMap(article)).toList().where((element) => element.favourite==true).toList();
-    ArticleModel.articles = list;
-
+    favourite= list;
     setState(() {
 
     });
@@ -41,12 +42,12 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
   Widget build(BuildContext context) {
     loaddata();
     return Container(
-        child: (ArticleModel.articles.length!=0 && ArticleModel.articles.isNotEmpty) ?  ListView.builder(
-          itemCount: ArticleModel.articles.length,
+        child: (favourite!=0 && favourite.isNotEmpty) ?  ListView.builder(
+          itemCount: favourite.length,
           itemBuilder: (context, index){
             return ArticleWidget(
                 articleIndex: index,
-                article : ArticleModel.articles[index]
+                article : favourite[index]
             );
           },
         ) :

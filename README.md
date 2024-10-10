@@ -1,16 +1,13 @@
 # demo_project
 
-A new Flutter project.
+AnimeMangaToons
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Application for showing Popular Manga Toons . 
+https://github.com/user-attachments/assets/dd97ec01-9c3b-43e8-a3e4-6318a2cb23b0
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![flutter_app_demo_pic](https://github.com/user-attachments/assets/8275e7db-4078-4182-bf9d-6d2b35e14832)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+

@@ -50,20 +50,56 @@
   },
 
   {
+    "title": "Your smile is a Trap",
+    "imageURL": "https://animemangatoon.com/wp-content/uploads/2024/09/Screenshot-2024-09-16-132459-750x375.webp",
+    "favourite": false,
+    "creator": "Aengo",
+    "genre": "Romance",
+    "description": "Do you believe that people judge others based on their outer appearance? Have you ever been judged based on your looks? Kiyo is an ex-idol trainee who wants to live like a normal teenager. In this attempt, he starts living with his grandmother and enrolls in a new school. He even starts wearing ugly-looking glasses to hide his exceptional looks. There, he meets Lily, another victim of the same thing. People fear her and her father just because of their scary features, even though they are nice. However, Kiyu makes the same mistakes as others and judges Lily just like everyone else. Gradually, Kiyu realizes his mistake and the fact that Lily is really nice and kind. Read Your Smile Is A Trap to learn about their blossoming love and the obstacles they face."
+  },
+
+  {
+    "title": "There Must Be Happy Endings",
+    "imageURL": "https://animemangatoon.com/wp-content/uploads/2024/09/Screenshot-2024-09-16-133040-1024x512.webp",
+    "favourite": false,
+    "creator": "Jaerim, Bulsa, Flada",
+    "genre": "Romance",
+    "description": "If you ever get a chance to go back and change things you regret now, would you do it? Yeonu is a young and beautiful woman married to Seonjae, a cold and handsome businessman. Her marriage was of convenience and hence there is no love between her and her husband. They tried running the marriage, but ultimately, Yeonu gave up, and they divorced. Due to a series of unfortunate events, Seonjae dies in front of her. However, fate gives her a second chance, and she vows to save Seonjae this time. Read There Must Be Happy Endings to find out whether or not Yeonu was able to save Seonjae and why Seonjae seems to be hiding several secrets."
+  },
+
+  {
+    "title": "Season of Blossom",
+    "imageURL":"https://animemangatoon.com/wp-content/uploads/2024/09/Screenshot-2024-09-16-133857-750x375.webp",
+    "favourite": false,
+    "creator": "HONGDUCK, NEMONE￥",
+    "genre": "Romance",
+    "description": "The popular webtoon series Seasons of Blossom is a compilation of several individual stories that are all connected. It contains all four seasons: spring, summer, fall, and winter. Each season contains a different story and a different theme with different endings. It focuses majorly on school bullying and how much it can affect someone’s whole life. Despite it being based on high school students, the story has several serious events and a storyline with many variations. Check out this webtoon to learn about each story and their interlinked connections."
+  },
+
+  {
+    "title": "Romance 101",
+    "imageURL":"https://animemangatoon.com/wp-content/uploads/2024/09/Screenshot-2024-09-16-134227-750x375.webp",
+    "favourite": false,
+    "creator": "Namsoo",
+    "genre": "Romance",
+    "description": "Are you an organized person who keeps track of every detail, disregarding how insignificant it may be, or are you a messy person who goes with the flow? Bareum is a very organized person who even maintains a diary detailing all her events and commitments. She has always had great marks and a clear record of what she wants to do in the future. However, one thing that she has not had any luck with is making a boyfriend. She decides to do things a little differently to achieve this goal and hence joins a programming club despite her planner being full. Fate has different plans in store for her. Read the popular webtoon Romance 101 to find out whether or not she was able to achieve this goal."
+  },
+
+  {
     "title": "",
-    "imageURL": "",
+    "imageURL":"",
     "favourite": false,
     "creator": "",
-    "genre": "",
+    "genre": "Romance",
     "description": ""
   },
 
   {
     "title": "",
-    "imageURL": "",
+    "imageURL":"",
     "favourite": false,
     "creator": "",
-    "genre": "",
+    "genre": "Romance",
     "description": ""
   }
 ]
